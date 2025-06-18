@@ -1,7 +1,7 @@
 Package: discfrail
 Title: Cox Models for Time-to-Event Data with Nonparametric Discrete
         Group-Specific Frailties
-Version: 0.1
+Version: 0.2
 Authors@R: c( person("Francesca", "Gasperoni", email = "francesca.gasperoni@polimi.it", role = c( "aut", "cre" ) ),
               person("Christopher", "Jackson", email = "chris.jackson@mrc-bsu.cam.ac.uk", role = c( "aut") ) )
 Maintainer: Francesca Gasperoni <francesca.gasperoni@polimi.it>
@@ -13,12 +13,12 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Suggests: knitr, rmarkdown
-Imports: Matrix, numDeriv
+Imports: graphics, Matrix, numDeriv, stats, utils
 VignetteBuilder: knitr
-RoxygenNote: 6.1.1
+RoxygenNote: 7.3.2
 NeedsCompilation: no
-Packaged: 2019-03-08 20:59:17 UTC; Francesca
+Packaged: 2025-06-17 21:34:27 UTC; franc
 Author: Francesca Gasperoni [aut, cre],
   Christopher Jackson [aut]
 Repository: CRAN
-Date/Publication: 2019-03-13 12:03:29 UTC
+Date/Publication: 2025-06-18 00:40:02 UTC

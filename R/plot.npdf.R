@@ -8,11 +8,11 @@
 ##'
 ##' @param cols Vector of colour names or numbers, of the same length as the number of groups.  If not given, this defaults to \code{x$belonging}.
 ##'
-##' @param survfit_opts Optional list of additional arguments to pass to \code{\link{survfit.formula}}.
+##' @param survfit_opts Optional list of additional arguments to pass to \code{\link[survival]{survfit.formula}}.
 ##'
 ##' @param na_opts Optional list of arguments (other than \code{"cols"}) to pass to \code{\link{plot.nelsonaalen_npdf}}.
 ##'
-##' @param ... Optional arguments to pass to \code{\link{plot.survfit}}.
+##' @param ... Optional arguments to pass to \code{\link[survival]{plot.survfit}}.
 ##'
 ##' @examples
 ##'
@@ -35,6 +35,9 @@
 ##'
 ##' @importFrom graphics lines plot lines.default plot.default
 ##' @importFrom stats knots stepfun plot.stepfun
+##'
+##'
+##' @seealso \code{\link[survival]{survfit.formula}} \code{\link[survival]{plot.survfit}}
 ##'
 ##' @export
 plot.npdf <- function(x, type="km", cols=NULL, survfit_opts = NULL, na_opts = NULL, ...){
@@ -74,7 +77,7 @@ plot.npdf <- function(x, type="km", cols=NULL, survfit_opts = NULL, na_opts = NU
 ##'                     xlab="Follow-up days",
 ##'                     ylab="Nelson-Aalen estimate"))
 ##'
-##' @seealso \code{\link{plot.npdf}}
+##' @seealso \code{\link{plot.npdf}} 
 ##'
 ##' @export
 plot.npdflist <- function(x, K=NULL, ...){
@@ -89,7 +92,7 @@ plot.npdflist <- function(x, K=NULL, ...){
 ##'
 ##' @inheritParams plot.npdf
 ##'
-##' @return A list of objects of length equal to the number of groups in the data.  Each component is a list, equivalent to the output of \code{\link{survfit}} called for the corresponding group with \code{type="fh"}, but with two additional components:
+##' @return A list of objects of length equal to the number of groups in the data.  Each component is a list, equivalent to the output of \code{\link[survival]{survfit}} called for the corresponding group with \code{type="fh"}, but with two additional components:
 ##'
 ##' \code{y0}:  \code{-log} of the survival estimate
 ##'
@@ -147,7 +150,7 @@ nelsonaalen_npdf <- function(x){
 ##'      xlab="Follow-up days", ylab="Nelson-Aalen estimate",
 ##'      cols=ifelse(x$belonging==2, "purple", "black"))
 ##'
-##' @seealso \code{\link{nelsonaalen_npdf}}
+##' @seealso \code{\link{nelsonaalen_npdf}} 
 ##'
 ##' @export
 plot.nelsonaalen_npdf <- function(x, xlim=NULL, ylim=NULL, xlab=NULL, ylab=NULL, cols=NULL, ...){
@@ -168,9 +171,9 @@ plot.nelsonaalen_npdf <- function(x, xlim=NULL, ylim=NULL, xlab=NULL, ylab=NULL,
 ##'
 ##' @inheritParams plot.npdf
 ##'
-##' @return A list of survival estimates, one for each group, as produced by \code{\link{survfit.formula}}
+##' @return A list of survival estimates, one for each group, as produced by \code{\link[survival]{survfit.formula}}
 ##'
-##' @seealso \code{\link{plot.npdf}}, \code{\link{plot.survfit_npdf}}
+##' @seealso \code{\link{plot.npdf}}, \code{\link{plot.survfit_npdf}}, \code{\link[survival]{survfit.formula}}
 ##'
 ##' @export
 survfit_npdf <- function(x, survfit_opts = NULL){

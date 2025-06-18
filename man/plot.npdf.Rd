@@ -4,8 +4,7 @@
 \alias{plot.npdf}
 \title{Survival or cumulative hazard curves from a fitted nonparametric discrete frailty model}
 \usage{
-\method{plot}{npdf}(x, type = "km", cols = NULL, survfit_opts = NULL,
-  na_opts = NULL, ...)
+\method{plot}{npdf}(x, type = "km", cols = NULL, survfit_opts = NULL, na_opts = NULL, ...)
 }
 \arguments{
 \item{x}{A fitted nonparametric discrete frailty model, as returned by \code{\link{npdf_cox}} with \code{estK=FALSE}.}
@@ -14,11 +13,11 @@
 
 \item{cols}{Vector of colour names or numbers, of the same length as the number of groups.  If not given, this defaults to \code{x$belonging}.}
 
-\item{survfit_opts}{Optional list of additional arguments to pass to \code{\link{survfit.formula}}.}
+\item{survfit_opts}{Optional list of additional arguments to pass to \code{\link[survival]{survfit.formula}}.}
 
 \item{na_opts}{Optional list of arguments (other than \code{"cols"}) to pass to \code{\link{plot.nelsonaalen_npdf}}.}
 
-\item{...}{Optional arguments to pass to \code{\link{plot.survfit}}.}
+\item{...}{Optional arguments to pass to \code{\link[survival]{plot.survfit}}.}
 }
 \description{
 This function plots estimates of the survival or cumulative hazard for each group, coloured according to the latent population that each group belongs to.
@@ -42,4 +41,7 @@ plot( result, type = "na", cols=ifelse(result$belonging==2, "purple", "black"),
                     xlab="Follow-up days",
                     ylab="Nelson-Aalen estimate"))
 
+}
+\seealso{
+\code{\link[survival]{survfit.formula}} \code{\link[survival]{plot.survfit}}
 }

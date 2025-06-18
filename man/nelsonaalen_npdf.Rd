@@ -10,7 +10,7 @@ nelsonaalen_npdf(x)
 \item{x}{A fitted nonparametric discrete frailty model, as returned by \code{\link{npdf_cox}} with \code{estK=FALSE}.}
 }
 \value{
-A list of objects of length equal to the number of groups in the data.  Each component is a list, equivalent to the output of \code{\link{survfit}} called for the corresponding group with \code{type="fh"}, but with two additional components:
+A list of objects of length equal to the number of groups in the data.  Each component is a list, equivalent to the output of \code{\link[survival]{survfit}} called for the corresponding group with \code{type="fh"}, but with two additional components:
 
 \code{y0}:  \code{-log} of the survival estimate
 

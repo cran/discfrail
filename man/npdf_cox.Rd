@@ -4,20 +4,27 @@
 \alias{npdf_cox}
 \title{Cox model for grouped survival data with nonparametric discrete shared frailties}
 \usage{
-npdf_cox(formula, groups, data, K = 2, estK = TRUE,
-  criterion = "BIC", eps_conv = 10^-4, se_method = c("louis",
-  "exact"))
+npdf_cox(
+  formula,
+  groups,
+  data,
+  K = 2,
+  estK = TRUE,
+  criterion = "BIC",
+  eps_conv = 10^-4,
+  se_method = c("louis", "exact")
+)
 }
 \arguments{
 \item{formula}{A formula expression in conventional R linear modelling
 syntax. The response must be a survival time constructed by the
-\code{\link{Surv}} function from the \pkg{survival} package, and
+\code{\link[survival]{Surv}} function from the \pkg{survival} package, and
 any covariates are given on the right-hand
 side.  For example,
 
 \code{Surv(time, dead) ~ age + sex}
 
-Only \code{Surv} objects of \code{type="right"} are supported, corresponding to right-censored observations.}
+Only \code{\link[survival]{Surv}} objects of \code{type="right"} are supported, corresponding to right-censored observations.}
 
 \item{groups}{name of the variable which indicates the group in which each individual belongs (e.g. the hospital that the individual is treated in).  This can be integer, factor or character.  The name should be unquoted.}
 
@@ -80,4 +87,7 @@ Gasperoni, F., Ieva, F., Paganoni, A.M., Jackson, C. and Sharples, L. (2018). No
 Laird, N. (1978). Nonparametric maximum likelihood estimation of a mixing distribution. \emph{Journal of the American Statistical Association}, 73(364), 805–811.
 
 Louis, T. A. (1982). Finding the observed information matrix when using the EM algorithm. \emph{Journal of the Royal Statistical Society. Series B}, 44(2), 226–233.
+}
+\seealso{
+\code{\link[survival]{Surv}}
 }

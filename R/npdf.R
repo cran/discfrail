@@ -19,13 +19,13 @@
 #'
 #' @param formula A formula expression in conventional R linear modelling
 #' syntax. The response must be a survival time constructed by the
-#' \code{\link{Surv}} function from the \pkg{survival} package, and
+#' \code{\link[survival]{Surv}} function from the \pkg{survival} package, and
 #' any covariates are given on the right-hand
 #' side.  For example,
 #'
 #' \code{Surv(time, dead) ~ age + sex}
 #'
-#' Only \code{Surv} objects of \code{type="right"} are supported, corresponding to right-censored observations.
+#' Only \code{\link[survival]{Surv}} objects of \code{type="right"} are supported, corresponding to right-censored observations.
 #'
 #' @param groups name of the variable which indicates the group in which each individual belongs (e.g. the hospital that the individual is treated in).  This can be integer, factor or character.  The name should be unquoted.
 #'
@@ -85,6 +85,8 @@
 #' @importFrom utils tail
 #' @importFrom numDeriv genD
 #' @importFrom Matrix forceSymmetric
+#'
+#'@seealso \code{\link[survival]{Surv}}
 #'
 #' @export
 #'

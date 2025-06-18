@@ -3,7 +3,6 @@
 \docType{package}
 \name{discfrail-package}
 \alias{discfrail-package}
-\alias{_PACKAGE}
 \alias{discfrail}
 \title{discfrail: Cox Models for Time-to-Event Data with Nonparametric Discrete Group-Specific Frailties.}
 \description{
